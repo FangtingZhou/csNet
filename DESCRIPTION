@@ -7,6 +7,6 @@ Author: Fangting Zhou [aut, cre]
 Maintainer: Fangting Zhou <fangtingzhou@tamu.edu>
 Description: The package provides dynamic gene regulatory network construction derived from single-cell RNA sequencing data. The construction is based on simultaneous equation model with varying coefficients. The inference is done within a Bayesian framework and calculations are performed with Markov chain Monte Carlo.
 License: GPL-3
-Imports: Rcpp (>= 1.0.2)
+Imports: Rcpp (>= 1.0.2), splines
 LinkingTo: Rcpp, RcppArmadillo
 RoxygenNote: 6.1.1
