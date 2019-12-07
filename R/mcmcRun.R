@@ -15,7 +15,7 @@ runMCMC = function(X, d0, maxit, burnin, interval) {
   require(splines)
   
   # MCMC initialization
-  n0 = nrow(X0); p0 = ncol(X0)
+  n0 = nrow(X); p0 = ncol(X)
   
   # variance for noise
   s = rgamma(p0, 1, 1e-1)
@@ -41,22 +41,22 @@ runMCMC = function(X, d0, maxit, burnin, interval) {
   # MCMC iterations
   while(iter <= maxit) {
     # update variance
-    s = updates(B, X0, T, t, a)
+    s = updates(B, X, T, t, a)
     # update edge indicator
-    G = updateG(X0, T, G, s, t, r, z, v)
+    G = updateG(X, T, G, s, t, r, z, v)
     # update edge probability
     r = updater(G)
     # update time
-    ptime = updatet(B, X0, T, s, t, a)
+    ptime = updatet(B, X, T, s, t, a)
     t = ptime$t; T = ptime$T
     # update variance for coefficient
     v = updatev(B, v)
     # update variance for random effect
     z = updatez(a, z)
     # update coefficient
-    B = updateB(B, X0, T, G, s, t, a, v)
+    B = updateB(B, X, T, G, s, t, a, v)
     # update random effect
-    a = updatea(B, X0, T, s, t, z)
+    a = updatea(B, X, T, s, t, z)
     recordG = c(recordG, list(G))
     recordT = c(recordT, list(t))
     
