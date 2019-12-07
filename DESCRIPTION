@@ -9,3 +9,4 @@ Description: The package provides dynamic gene regulatory network construction d
 License: GPL-3
 Imports: Rcpp (>= 1.0.2)
 LinkingTo: Rcpp, RcppArmadillo
+RoxygenNote: 6.1.1
