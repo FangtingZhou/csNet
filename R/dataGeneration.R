@@ -13,9 +13,9 @@
 #' @param percent proportion of non-zero coefficient
 #'
 #' @return simulated time t0, random effect a0, edge-edge coefficient G0 and F0, and data matrix X0
-#' @export
+#' @export 
 #'
-#' @examples
+#' @examples 
 generateData = function(n0, p0, a, s, percent) {
   t0 = runif(n0) # time
   a0 = sample(a, p0, replace = TRUE) # random coefficient
