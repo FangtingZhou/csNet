@@ -1,8 +1,47 @@
-.b1fun = function(x) exp(x)
-.b2fun = function(x) {2 * sin(pi / x)}
-.b3fun = function(x) {2 * sin(pi * x)}
-.b4fun = function(x) {2 * sin(2 * pi * x)}
-.b5fun = function(x) {2 * sin(8 * pi * x)}
+#' Strictly increasing coefficient function
+#'
+#' @param x 
+#' 
+#' @export
+sifun = function(x) {
+  exp(x)
+}
+
+#' Drastic oscillation coefficient function
+#'
+#' @param x 
+#' 
+#' @export
+dofun = function(x) {
+  2 * sin(pi / x)
+}
+
+#' Symmetric coefficient function
+#'
+#' @param x 
+#' 
+#' @export
+sfun = function(x) {
+  2 * sin(pi * x)
+}
+
+#' Triangular coefficient function
+#'
+#' @param x 
+#' 
+#' @export
+tfun = function(x) {
+  2 * sin(2 * pi * x)
+}
+
+#' Periodic coefficient function
+#'
+#' @param x 
+#' 
+#' @export
+pfun = function(x) {
+  2 * sin(8 * pi * x)
+}
 
 #' Generate simulation data for dynamic network inference
 #'
@@ -37,11 +76,11 @@ generateData = function(n0, p0, a, s, percent) {
   for(j in 2 : p0) {
     X0[, j] = a0[j] * t0 + rnorm(n0, sd = s)
     for(l in 1 : (j - 1)) {
-      if(F0[j, l] == 1) X0[, j] = X0[, j] + b1fun(t0) * X0[, l]
-      if(F0[j, l] == 2) X0[, j] = X0[, j] + b2fun(t0) * X0[, l]
-      if(F0[j, l] == 3) X0[, j] = X0[, j] + b3fun(t0) * X0[, l]
-      if(F0[j, l] == 4) X0[, j] = X0[, j] + b4fun(t0) * X0[, l]
-      if(F0[j, l] == 5) X0[, j] = X0[, j] + b5fun(t0) * X0[, l]
+      if(F0[j, l] == 1) X0[, j] = X0[, j] + sifun(t0) * X0[, l]
+      if(F0[j, l] == 2) X0[, j] = X0[, j] + dofun(t0) * X0[, l]
+      if(F0[j, l] == 3) X0[, j] = X0[, j] + sfun(t0) * X0[, l]
+      if(F0[j, l] == 4) X0[, j] = X0[, j] + tfun(t0) * X0[, l]
+      if(F0[j, l] == 5) X0[, j] = X0[, j] + pfun(t0) * X0[, l]
     }
   }
   
