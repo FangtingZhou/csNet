@@ -1,13 +1,11 @@
 Package: csNet
 Type: Package
-Title: What the package does (short line)
+Title: Cell-specific Gene Regulatory Network Construction via Latent Trajectory
 Version: 1.0
 Date: 2019-12-07
-Author: Who wrote it
-Maintainer: Who to complain to
-     <yourfault@somewhere.net>
-Description: More about what it does (maybe more
-     than one line)
-License: What license is it under?
+Author: Fangting Zhou [aut, cre]
+Maintainer: Fangting Zhou <fangtingzhou@tamu.edu>
+Description: The package provides dynamic gene regulatory network construction derived from single-cell RNA sequencing data. The construction is based on simultaneous equation model with varying coefficients. The inference is done within a Bayesian framework and calculations are performed with Markov chain Monte Carlo.
+License: GPL-3
 Imports: Rcpp (>= 1.0.2)
 LinkingTo: Rcpp, RcppArmadillo
