@@ -8,7 +8,7 @@ We assume the simultaneous equation with factor and varying coefficient model wh
 However, in the current package, we only consider a fixed network case by assign a spike and slab prior on gene-gene coefficient. Future work is on efficient modeling and calculating graph parameters under the dynamic network case.
 
 ### Model Inference
-The model is constructed under the Bayesian framework and inference is done with Markov chain Monte Carlo (MCMC). 
+The model is constructed under the Bayesian framework and inference is done with Markov chain Monte Carlo (MCMC). Although using C to perform updates, the *mcmcRun* function will be slow if dimension of dataset and maxit are large.
 
 ### Package Usage
 We provide R code to generate simulation data and perform simulation study, and C code to do MCMC updates. In the future work, we hope to visualize the constructed dynamic network and pseudotime trajectory, and provide comparison with other methods.
